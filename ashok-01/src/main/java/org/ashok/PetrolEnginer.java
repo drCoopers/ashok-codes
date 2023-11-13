@@ -3,7 +3,7 @@ package org.ashok;
 public class PetrolEnginer implements Enginer{
 
     @Override
-    public int startEnginer() {
-        return 0;
+    public String startEnginer() {
+        return "Engine started";
     }
 }
