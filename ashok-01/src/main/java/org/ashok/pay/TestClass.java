@@ -10,5 +10,9 @@ public class TestClass {
         payment1.processPayment(0.0);
         Payment payment2= new Payment(new DebitCard());
         payment2.processPayment(0.0);
+
+        Payment payment3= new Payment();
+        payment3.iPayment= new DebitCard();
+        payment3.processPayment(20000.0);
     }
 }

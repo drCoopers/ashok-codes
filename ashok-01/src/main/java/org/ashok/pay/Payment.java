@@ -2,7 +2,7 @@ package org.ashok.pay;
 
 public class Payment {
 
-    IPayment iPayment;
+    public IPayment iPayment;
     Payment(IPayment iPayment){
         this.iPayment=iPayment;
     }
