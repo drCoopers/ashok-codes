@@ -9,11 +9,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class RunSpringBeans {
     public static void main(String[] args) {
         ApplicationContext context= new ClassPathXmlApplicationContext("beans.xml");
+
         PetrolEngine petrolEngine= context.getBean(PetrolEngine.class);
 
         StartEngineBy startEnginerBean= context.getBean(StartEngineBy.class);
 
         startEnginerBean.statTheEngine(10);
+
         System.out.println(petrolEngine.hashCode());
 
 //        DieselEngine dieselEngine= context.getBean(DieselEngine.class);
