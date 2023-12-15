@@ -19,7 +19,7 @@ public class Employee {
     @Id
     @Column(name = "employee_id")
     @GenericGenerator(name = "emp_id_gen", strategy = "com.sanketdd.generator.utility.EmployeeEdGenerator")
-    @GeneratedValue(generator = "emp_id_gen")
+    @GeneratedValue(generator = "emp_id_gen" , strategy = GenerationType.SEQUENCE)
     private String employeeId;
 
     @Column(name = "name")

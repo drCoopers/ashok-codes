@@ -23,7 +23,15 @@ public class EmployeeEdGenerator implements IdentifierGenerator {
 
             Connection connection= sharedSessionContractImplementor.getJdbcConnectionAccess().obtainConnection();
             Statement statement=connection.createStatement();
+            // for mysql use this
+
             String sql = " select employee_seq.next_val from  employee_seq";
+
+
+            // String sql = "select nextval('employee_seq')";
+            // for postgresql use this
+
+
             ResultSet rs= statement.executeQuery(sql);
             if (rs.next()){
                 Long value=rs.getLong(1);
