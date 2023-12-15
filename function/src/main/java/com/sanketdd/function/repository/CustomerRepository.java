@@ -12,6 +12,9 @@ public interface CustomerRepository extends JpaRepository<Customer,Long> {
 
 
     /*
+    need to create this function in sql then ypu can directly call it from JPA
+
+
     CREATE  FUNCTION get_customer_count() RETURNS INT
 READS SQL DATA
 BEGIN
