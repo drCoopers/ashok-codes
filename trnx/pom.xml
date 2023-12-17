@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sanketdd</groupId>
-	<artifactId>generator</artifactId>
+	<artifactId>trnx</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>generator</name>
-	<description>Project to configure the custom generator .</description>
+	<name>trnx</name>
+	<description>Spring boot demo project for transactions. </description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -25,17 +25,18 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>org.postgresql</groupId>-->
+<!--			<artifactId>postgresql</artifactId>-->
+<!--			<scope>runtime</scope>-->
+<!--		</dependency>-->
+
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
-		<!--		<dependency>-->
-		<!--			<groupId>org.postgresql</groupId>-->
-		<!--			<artifactId>postgresql</artifactId>-->
-		<!--			<scope>runtime</scope>-->
-		<!--		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -44,7 +45,6 @@
 	</dependencies>
 
 	<build>
-		<finalName> sbsms-app</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
