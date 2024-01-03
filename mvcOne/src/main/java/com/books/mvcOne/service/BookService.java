@@ -32,4 +32,8 @@ public class BookService {
     Optional<Books> optionalBooks=booksRepo.findById(id);
     return optionalBooks.get();
     }
+
+    public void deleteById(Long id) {
+        booksRepo.deleteById(id);
+    }
 }

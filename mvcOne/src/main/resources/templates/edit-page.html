@@ -10,33 +10,31 @@
 
     <title>Demok</title>
     <script th:inline="javascript">
-        console.log([[${books}]]);
+        console.log([[${book}]]);
     </script>
 </head>
 <body>
 <div class="container">
-    <form :form action="add" method="post" modelAttribute="book"
+    <form :form action="add" method="post" modelAttribute="book" th:object="${book}"
                class="was-validated">
 
+        <input type="hidden" th:field="*{id}">
+
         <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" class="form-control" id="name" path="name" aria-describedby="name">
+            <label>Name</label>
+            <input type="text"  class="form-control" th:field="*{name}" aria-describedby="name">
         </div>
 
         <div class="form-group">
-            <label for="author">Author</label>
-            <input type="text" name="author" class="form-control" id="author" path="author">
+            <label>Author</label>
+            <input type="text"  class="form-control"  th:field=="*{author}">
         </div>
 
         <div class="form-group">
             <label for="price">Price</label>
-            <input type="text" name="price" class="form-control" id="price" path="price">
+            <input type="text"  class="form-control" id="price" th:field="*{price}">
         </div>
 
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

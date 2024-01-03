@@ -52,12 +52,41 @@ public class BookController {
         return modelAndView;
     }
 
-    @GetMapping("/show/edit/{id}")
-    public  ModelAndView showEditPage(@RequestParam("id") Long id){
+    @GetMapping("/show/edit/")
+    public  ModelAndView showEditPage(@RequestParam("id")  Long id){
         Books book= bookService.findbyId(id);
+        System.out.println(book);
         ModelAndView modelAndView= new ModelAndView();
         modelAndView.setViewName("edit-page");
         modelAndView.addObject("book",book);
+        System.out.println("Model vew is "+ modelAndView);
+        return modelAndView;
+    }
+
+
+    @GetMapping("/delete/")
+    public ModelAndView deleteById(@RequestParam("id")  Long id){
+        bookService.deleteById(id);
+        ModelAndView modelAndView = new ModelAndView();
+        List<Books> booksList = bookService.getAllBooks();
+        modelAndView.addObject("books", booksList);
+        modelAndView.setViewName("books-view");
+        printMethod(modelAndView, booksList);
+        return modelAndView;
+    }
+
+    @PostMapping("/show/edit/add")
+    public ModelAndView editAdd( Books books){
+        Books books1=bookService.findbyId(books.getId());
+        books1.setAuthor(books.getAuthor());
+        books1.setName(books.getName());
+        books1.setPrice(books.getPrice());
+        bookService.addBook(books1);
+        ModelAndView modelAndView = new ModelAndView();
+        List<Books> booksList = bookService.getAllBooks();
+        modelAndView.addObject("books", booksList);
+        modelAndView.setViewName("books-view");
+        printMethod(modelAndView, booksList);
         return modelAndView;
     }
 }

@@ -9,6 +9,10 @@
     <title>Demok</title>
 <script th:inline="javascript">
     console.log([[${books}]]);
+
+    function confirmDelete(){
+    return confirm("Are you sure to DELETE");
+    }
 </script>
 
 </head>
@@ -37,8 +41,13 @@
             <td th:text="${book.author}" />
             <td th:text="${book.price}" />
             <td>
-            <a href="/api/v1/book/show/edit/${book.id}" class="btn btn-primary">edid</a>
-            <a href="#" class="btn btn-danger">delete</a>
+            <a th:href="@{/api/v1/book/show/edit/?(id=${book.id})}" class="btn btn-primary">edit</a>
+
+            <a th:href="@{/api/v1/book/delete/?(id=${book.id})}"
+               class="btn btn-danger"
+               onclick="return confirmDelete()">
+                delete
+            </a>
             </td>
         </tr>
 
